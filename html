@@ -1,84 +1,274 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta vaishnavi.g="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Website</title>
+<meta charset="UTF-8">
+<meta vaishnavi.g="viewport" content="width=device-width, initial-scale=1.0">
+<title>Name | PORTFOLIO</title>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #f4f4f4;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-        header {
-            background: #333;
-            color: white;
-            padding: 15px;
-            text-align: center;
-        }
+<style>
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
+}
 
-        nav {
-            background: #555;
-            padding: 10px;
-            text-align: center;
-        }
+body {
+  background: radial-gradient(circle at top, #111827, #020617);
+  color: #e5e7eb;
+  scroll-behavior: smooth;
+}
 
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
+/* HEADER */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 20px rgba(56,189,248,0.08);
+  z-index: 1000;
+}
 
-        nav a:hover {
-            color: yellow;
-        }
+.navbar {
+  max-width: 1100px;
+  margin: auto;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-        .container {
-            padding: 20px;
-        }
+.navbar h1 {
+  font-size: 22px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #38bdf8, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+.nav-links a {
+  margin-left: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #e5e7eb;
+  position: relative;
+  transition: 0.3s;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -6px;
+  background: linear-gradient(90deg, #38bdf8, #a78bfa);
+  transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* SECTION BASE */
+section {
+  max-width: 1100px;
+  margin: 120px auto 60px;
+  padding: 60px 6%;
+  background: linear-gradient(145deg, #020617, #020617);
+  border-radius: 22px;
+  box-shadow: 0 30px 70px rgba(15,23,42,0.9);
+  border: 1px solid rgba(148,163,184,0.08);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.8s ease;
+}
+
+section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+section h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #38bdf8, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ABOUT */
+#about p {
+  max-width: 750px;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+/* PROJECTS */
+#projects ul {
+  margin-top: 15px;
+  padding-left: 20px;
+}
+
+#projects li {
+  margin-bottom: 12px;
+  color: #cbd5f5;
+}
+
+/* CONTACT FORM */
+#contact form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+}
+
+#contact input,
+#contact textarea {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+#contact button {
+  padding: 12px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(90deg, #38bdf8, #a78bfa);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#contact button:hover {
+  transform: scale(1.05);
+}
+
+#contact p {
+  margin-top: 20px;
+  color: #c7d2fe;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 30px 20px;
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  section {
+    padding: 40px 20px;
+  }
+}
+</style>
 </head>
 
 <body>
 
 <header>
-    <h1>Welcome to My Website</h1>
-    <p>Created with HTML & CSS</p>
+  <nav class="navbar">
+    <h1>vaishnavi.g</h1>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
 </header>
 
-<nav>
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Contact</a>
-</nav>
+<section id="about">
+  <h2>About Me</h2>
+  <p>
+    Hello, I’m Name, Welcome to my personal website where I share my journey, 
+    skills, and interests.
+  </p>
+</section>
 
-<div class="container">
-    <h2>Home</h2>
-    <p>This is my first website. You can add anything here like text, images, or videos.</p>
+<section id="projects">
+  <h2>Projects</h2>
+  <ul>
+    <li>Project 1 – Portfolio website</li>
+    <li>Project 2 – Mini web design</li>
+    <li>Project 3 – Student record system</li>
+  </ul>
+</section>
 
-    <h2>About</h2>
-    <p>Write about yourself or your project here.</p>
+<section id="contact">
+  <h2>Contact</h2>
 
-    <h2>Contact</h2>
-    <p>Email: example@email.com</p>
-</div>
+  <form id="contact-form" action="https://formspree.io/f/link" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+
+  <p>Email: 25bcac46@gmail.com</p>
+</section>
 
 <footer>
-    <p>© 2026 My Website</p>
+  © 2026 Name
 </footer>
+
+<script>
+/* SCROLL ANIMATION */
+const sections = document.querySelectorAll("section");
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+}, { threshold: 0.2 });
+
+sections.forEach(section => observer.observe(section));
+
+/* FORM SUBMISSION */
+const form = document.getElementById("contact-form");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const formData = new FormData(form);
+
+  try {
+    const res = await fetch("https://formspree.io/f/xvzweozw", {
+      method: "POST",
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+
+    if (res.ok) {
+      alert("Message sent successfully!");
+      form.reset();
+    } else {
+      alert("Failed to send message");
+    }
+  } catch (err) {
+    alert("Error sending message");
+  }
+});
+</script>
 
 </body>
 </html>
